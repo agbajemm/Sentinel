@@ -176,3 +176,4 @@ C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Api\obj\Debug\net8.0
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Api\obj\Debug\net8.0\SentinelAI.Api.pdb
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Api\obj\Debug\net8.0\SentinelAI.Api.genruntimeconfig.cache
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Api\obj\Debug\net8.0\ref\SentinelAI.Api.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Api\obj\Debug\net8.0\SentinelAI.Api.sourcelink.json

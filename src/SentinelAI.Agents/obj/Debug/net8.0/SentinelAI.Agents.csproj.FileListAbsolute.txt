@@ -17,3 +17,4 @@ C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Agents\obj\Debug\net
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Agents\obj\Debug\net8.0\refint\SentinelAI.Agents.dll
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Agents\obj\Debug\net8.0\SentinelAI.Agents.pdb
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Agents\obj\Debug\net8.0\ref\SentinelAI.Agents.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Agents\obj\Debug\net8.0\SentinelAI.Agents.sourcelink.json

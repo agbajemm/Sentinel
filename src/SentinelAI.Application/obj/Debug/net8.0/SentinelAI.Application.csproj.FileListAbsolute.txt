@@ -13,3 +13,4 @@ C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debu
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\refint\SentinelAI.Application.dll
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\SentinelAI.Application.pdb
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\ref\SentinelAI.Application.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\SentinelAI.Application.sourcelink.json

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SentinelAI.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a09faef9b69b02f0d5f913bfab723b1c8ccc1d1c")]
 [assembly: System.Reflection.AssemblyProductAttribute("SentinelAI.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SentinelAI.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

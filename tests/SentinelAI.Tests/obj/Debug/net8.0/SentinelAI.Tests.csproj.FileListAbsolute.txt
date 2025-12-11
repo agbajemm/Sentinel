@@ -6,3 +6,4 @@ C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\obj\Debug\ne
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\obj\Debug\net8.0\SentinelAI.Tests.AssemblyInfoInputs.cache
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\obj\Debug\net8.0\SentinelAI.Tests.AssemblyInfo.cs
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\obj\Debug\net8.0\SentinelAI.Tests.csproj.CoreCompileInputs.cache
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\obj\Debug\net8.0\SentinelAI.Tests.sourcelink.json

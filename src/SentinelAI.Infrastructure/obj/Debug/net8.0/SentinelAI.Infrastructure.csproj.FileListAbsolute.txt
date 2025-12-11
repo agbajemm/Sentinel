@@ -15,3 +15,4 @@ C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\D
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\refint\SentinelAI.Infrastructure.dll
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\SentinelAI.Infrastructure.pdb
 C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\ref\SentinelAI.Infrastructure.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\SentinelAI.Infrastructure.sourcelink.json

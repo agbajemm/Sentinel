@@ -134,7 +134,11 @@ try
     });
     
     // Rate limiting
-    app.UseRateLimiter();
+    var rateLimitConfig = builder.Configuration.GetSection("RateLimiting");
+    if (rateLimitConfig.GetValue<bool>("EnableRateLimiting"))
+    {
+        app.UseRateLimiter();
+    }
     
     // Response caching
     app.UseResponseCaching();
