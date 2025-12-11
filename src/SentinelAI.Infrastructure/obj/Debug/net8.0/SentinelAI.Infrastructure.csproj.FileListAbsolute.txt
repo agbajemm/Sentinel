@@ -1,0 +1,17 @@
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\SentinelAI.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\SentinelAI.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\SentinelAI.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\SentinelAI.Infrastructure.AssemblyInfo.cs
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\SentinelAI.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\bin\Debug\net8.0\SentinelAI.Infrastructure.deps.json
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\bin\Debug\net8.0\SentinelAI.Infrastructure.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\bin\Debug\net8.0\SentinelAI.Infrastructure.pdb
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\bin\Debug\net8.0\SentinelAI.Application.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\bin\Debug\net8.0\SentinelAI.Core.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\bin\Debug\net8.0\SentinelAI.Core.pdb
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\bin\Debug\net8.0\SentinelAI.Application.pdb
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\Sentinel.8CA1CBD6.Up2Date
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\SentinelAI.Infrastructure.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\refint\SentinelAI.Infrastructure.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\SentinelAI.Infrastructure.pdb
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Infrastructure\obj\Debug\net8.0\ref\SentinelAI.Infrastructure.dll

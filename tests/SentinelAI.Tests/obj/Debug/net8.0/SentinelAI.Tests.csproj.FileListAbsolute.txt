@@ -1,0 +1,8 @@
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\bin\Debug\net8.0\.msCoverageSourceRootsMapping_SentinelAI.Tests
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\bin\Debug\net8.0\CoverletSourceRootsMapping_SentinelAI.Tests
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\obj\Debug\net8.0\SentinelAI.Tests.csproj.AssemblyReference.cache
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\obj\Debug\net8.0\MvcTestingAppManifest.json
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\obj\Debug\net8.0\SentinelAI.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\obj\Debug\net8.0\SentinelAI.Tests.AssemblyInfoInputs.cache
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\obj\Debug\net8.0\SentinelAI.Tests.AssemblyInfo.cs
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\tests\SentinelAI.Tests\obj\Debug\net8.0\SentinelAI.Tests.csproj.CoreCompileInputs.cache

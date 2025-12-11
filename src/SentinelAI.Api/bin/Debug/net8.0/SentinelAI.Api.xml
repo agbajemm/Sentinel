@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SentinelAI.Api</name>
+    </assembly>
+    <members>
+        <member name="T:SentinelAI.Api.Controllers.AlertsController">
+            <summary>
+            API controller for fraud alert management
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AlertsController.GetAlerts(SentinelAI.Core.DTOs.AlertQueryParameters,System.Threading.CancellationToken)">
+            <summary>
+            Get alerts with filtering and pagination
+            </summary>
+            <param name="parameters">Query parameters for filtering</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Paginated list of alerts</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AlertsController.GetAlert(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get a specific alert by ID
+            </summary>
+            <param name="id">Alert ID</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Alert details</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AlertsController.UpdateAlertStatus(System.Guid,SentinelAI.Core.DTOs.UpdateAlertStatusRequest,System.Threading.CancellationToken)">
+            <summary>
+            Update alert status
+            </summary>
+            <param name="id">Alert ID</param>
+            <param name="request">Status update request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Updated alert</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AlertsController.AssignAlert(System.Guid,System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Assign alert to a user
+            </summary>
+            <param name="id">Alert ID</param>
+            <param name="userId">User ID to assign</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AlertsController.EscalateAlert(System.Guid,SentinelAI.Api.Controllers.EscalateAlertRequest,System.Threading.CancellationToken)">
+            <summary>
+            Escalate an alert
+            </summary>
+            <param name="id">Alert ID</param>
+            <param name="request">Escalation request with reason</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="T:SentinelAI.Api.Controllers.EscalateAlertRequest">
+            <summary>
+            Request to escalate an alert
+            </summary>
+        </member>
+        <member name="T:SentinelAI.Api.Controllers.AnalysisController">
+            <summary>
+            API controller for fraud analysis operations
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AnalysisController.AnalyzeTransaction(SentinelAI.Core.DTOs.TransactionAnalysisRequest,System.Threading.CancellationToken)">
+            <summary>
+            Analyze a single transaction for fraud
+            </summary>
+            <param name="request">Transaction analysis request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Fraud analysis result</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AnalysisController.AnalyzeBatch(System.Collections.Generic.List{SentinelAI.Core.DTOs.TransactionAnalysisRequest},System.Threading.CancellationToken)">
+            <summary>
+            Analyze multiple transactions in batch
+            </summary>
+            <param name="requests">List of transaction analysis requests</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>List of fraud analysis results</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AnalysisController.GetCustomerHistory(System.String,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Get analysis history for a customer
+            </summary>
+            <param name="customerIdHash">Hashed customer ID</param>
+            <param name="limit">Maximum number of results</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>List of historical analysis results</returns>
+        </member>
+        <member name="T:SentinelAI.Api.Controllers.AuthController">
+            <summary>
+            Authentication controller for login, token refresh, and user management
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AuthController.Login(SentinelAI.Core.DTOs.LoginRequest,System.Threading.CancellationToken)">
+            <summary>
+            Authenticates a user and returns JWT tokens
+            </summary>
+            <param name="request">Login credentials</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>JWT access token and refresh token</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AuthController.RefreshToken(SentinelAI.Core.DTOs.RefreshTokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            Refreshes an access token using a refresh token
+            </summary>
+            <param name="request">Refresh token request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>New JWT access token and refresh token</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AuthController.Logout(SentinelAI.Core.DTOs.RefreshTokenRequest,System.Threading.CancellationToken)">
+            <summary>
+            Logs out the current user by revoking the refresh token
+            </summary>
+            <param name="request">Refresh token to revoke</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Success message</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AuthController.GetCurrentUser(System.Threading.CancellationToken)">
+            <summary>
+            Gets the current user's profile
+            </summary>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Current user information</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AuthController.ChangePassword(SentinelAI.Core.DTOs.ChangePasswordRequest,System.Threading.CancellationToken)">
+            <summary>
+            Changes the current user's password
+            </summary>
+            <param name="request">Password change request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Success message</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AuthController.CreateUser(SentinelAI.Core.DTOs.CreateUserRequest,System.Threading.CancellationToken)">
+            <summary>
+            Creates a new user (Admin only)
+            </summary>
+            <param name="request">User creation request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Created user information</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AuthController.GetUser(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Gets a user by ID (Admin only)
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>User information</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AuthController.RevokeUserTokens(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Revokes all refresh tokens for a user (Admin only)
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Success message</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.AuthController.ValidateApiKey(SentinelAI.Core.DTOs.ValidateApiKeyRequest,System.Threading.CancellationToken)">
+            <summary>
+            Validates an API key
+            </summary>
+            <param name="request">API key to validate</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>API key validation result</returns>
+        </member>
+        <member name="T:SentinelAI.Api.Controllers.HealthController">
+            <summary>
+            API controller for health checks
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.HealthController.LivenessCheck">
+            <summary>
+            Simple liveness check
+            </summary>
+            <returns>OK if service is running</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.HealthController.ReadinessCheck(System.Threading.CancellationToken)">
+            <summary>
+            Detailed readiness check including dependencies
+            </summary>
+            <returns>Health status of all components</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.HealthController.CheckAgentHealth(System.Threading.CancellationToken)">
+            <summary>
+            Check health of all AI agents
+            </summary>
+            <returns>Health status of each agent</returns>
+        </member>
+        <member name="T:SentinelAI.Api.Controllers.TenantsController">
+            <summary>
+            API controller for tenant management
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.TenantsController.CreateTenant(SentinelAI.Core.DTOs.CreateTenantRequest,System.Threading.CancellationToken)">
+            <summary>
+            Create a new tenant
+            </summary>
+            <param name="request">Tenant creation request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Created tenant with API key</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.TenantsController.GetTenant(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get tenant by ID
+            </summary>
+            <param name="id">Tenant ID</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Tenant details</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.TenantsController.UpdateTenant(System.Guid,SentinelAI.Core.DTOs.UpdateTenantRequest,System.Threading.CancellationToken)">
+            <summary>
+            Update tenant settings
+            </summary>
+            <param name="id">Tenant ID</param>
+            <param name="request">Update request</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Updated tenant</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.TenantsController.GetEnabledModules(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Get enabled modules for tenant
+            </summary>
+            <param name="id">Tenant ID</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>List of enabled modules</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.TenantsController.EnableModule(System.Guid,SentinelAI.Core.Enums.ModuleType,System.Threading.CancellationToken)">
+            <summary>
+            Enable a module for tenant
+            </summary>
+            <param name="id">Tenant ID</param>
+            <param name="module">Module to enable</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.TenantsController.DisableModule(System.Guid,SentinelAI.Core.Enums.ModuleType,System.Threading.CancellationToken)">
+            <summary>
+            Disable a module for tenant
+            </summary>
+            <param name="id">Tenant ID</param>
+            <param name="module">Module to disable</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>Success status</returns>
+        </member>
+        <member name="M:SentinelAI.Api.Controllers.TenantsController.RegenerateApiKey(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Regenerate API key for tenant
+            </summary>
+            <param name="id">Tenant ID</param>
+            <param name="cancellationToken">Cancellation token</param>
+            <returns>New API key (shown only once)</returns>
+        </member>
+        <member name="T:SentinelAI.Api.Controllers.ApiKeyResponse">
+            <summary>
+            Response containing the API key
+            </summary>
+        </member>
+        <member name="T:SentinelAI.Api.Extensions.ConfigurationExtensions">
+            <summary>
+            Extension methods for configuration with environment variable support
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ConfigurationExtensions.AddEnvironmentVariablePlaceholders(Microsoft.Extensions.Configuration.IConfigurationBuilder)">
+            <summary>
+            Adds configuration with environment variable placeholders support
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ConfigurationExtensions.ReplaceEnvironmentVariables(System.String)">
+            <summary>
+            Replaces ${VAR_NAME} placeholders with actual environment variable values
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ConfigurationExtensions.GetRequiredValue(Microsoft.Extensions.Configuration.IConfiguration,System.String)">
+            <summary>
+            Gets a required configuration value, throwing if not found
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ConfigurationExtensions.GetWithEnvFallback(Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)">
+            <summary>
+            Gets a configuration value with environment variable fallback
+            </summary>
+        </member>
+        <member name="T:SentinelAI.Api.Extensions.EnvironmentPlaceholderConfigurationProvider">
+            <summary>
+            Configuration provider that processes environment variable placeholders
+            </summary>
+        </member>
+        <member name="T:SentinelAI.Api.Extensions.EnvironmentPlaceholderConfigurationSource">
+            <summary>
+            Configuration source for environment variable placeholder processing
+            </summary>
+        </member>
+        <member name="T:SentinelAI.Api.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Extension methods for configuring dependency injection
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ServiceCollectionExtensions.AddInfrastructure(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds core infrastructure services
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ServiceCollectionExtensions.AddSecurityServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds security services
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ServiceCollectionExtensions.AddAuthenticationServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds authentication and authorization
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ServiceCollectionExtensions.AddApplicationServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds application services
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ServiceCollectionExtensions.AddAgentServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds AI agent services
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ServiceCollectionExtensions.AddRateLimitingServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds rate limiting
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ServiceCollectionExtensions.AddSwaggerServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds Swagger/OpenAPI documentation
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ServiceCollectionExtensions.AddCorsServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds CORS configuration
+            </summary>
+        </member>
+        <member name="M:SentinelAI.Api.Extensions.ServiceCollectionExtensions.AddHealthCheckServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds health checks
+            </summary>
+        </member>
+        <member name="T:SentinelAI.Api.Middleware.ApiKeyAuthenticationHandler">
+            <summary>
+            API Key authentication handler for service-to-service calls
+            </summary>
+        </member>
+        <member name="T:SentinelAI.Api.Middleware.ApiKeyAuthenticationOptions">
+            <summary>
+            Options for API key authentication
+            </summary>
+        </member>
+        <member name="T:SentinelAI.Api.Middleware.ApiKeyAuthenticationExtensions">
+            <summary>
+            Extension methods for API key authentication
+            </summary>
+        </member>
+        <member name="T:SentinelAI.Api.Middleware.ExceptionHandlingMiddleware">
+            <summary>
+            Global exception handling middleware
+            </summary>
+        </member>
+        <member name="T:SentinelAI.Api.Middleware.ExceptionHandlingMiddlewareExtensions">
+            <summary>
+            Extension method to add the middleware
+            </summary>
+        </member>
+    </members>
+</doc>

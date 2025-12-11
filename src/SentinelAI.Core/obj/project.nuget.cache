@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "qGK96h7X6E8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\system.text.json\\8.0.5\\system.text.json.8.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

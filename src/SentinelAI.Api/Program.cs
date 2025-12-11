@@ -1,0 +1,204 @@
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Serilog;
+using Serilog.Events;
+using SentinelAI.Api.Extensions;
+using SentinelAI.Api.Middleware;
+using SentinelAI.Core.Constants;
+
+// Configure Serilog early for startup logging
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+    .Enrich.FromLogContext()
+    .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+    .CreateBootstrapLogger();
+
+try
+{
+    Log.Information("Starting SENTINEL AI API...");
+    
+    var builder = WebApplication.CreateBuilder(args);
+    
+    // Configure Serilog from appsettings
+    builder.Host.UseSerilog((context, services, configuration) => configuration
+        .ReadFrom.Configuration(context.Configuration)
+        .ReadFrom.Services(services)
+        .Enrich.FromLogContext()
+        .Enrich.WithProperty("Application", "SentinelAI")
+        .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] [{SourceContext}] {Message:lj}{NewLine}{Exception}")
+        .WriteTo.File(
+            path: "logs/sentinel-ai-.log",
+            rollingInterval: RollingInterval.Day,
+            retainedFileCountLimit: 30,
+            outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] [{SourceContext}] {Message:lj}{NewLine}{Exception}"));
+    
+    // Add services
+    builder.Services
+        .AddInfrastructure(builder.Configuration)
+        .AddSecurityServices(builder.Configuration)
+        .AddAuthenticationServices(builder.Configuration)
+        .AddApplicationServices()
+        .AddAgentServices(builder.Configuration)
+        .AddRateLimitingServices(builder.Configuration)
+        .AddSwaggerServices(builder.Configuration)
+        .AddCorsServices(builder.Configuration)
+        .AddHealthCheckServices(builder.Configuration);
+    
+    // Add controllers with JSON options
+    builder.Services.AddControllers()
+        .AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+            options.JsonSerializerOptions.WriteIndented = builder.Environment.IsDevelopment();
+            options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+        });
+    
+    // Add response caching
+    builder.Services.AddResponseCaching();
+    
+    // Add response compression
+    builder.Services.AddResponseCompression(options =>
+    {
+        options.EnableForHttps = true;
+    });
+    
+    // Add HTTP context accessor for tenant context
+    builder.Services.AddHttpContextAccessor();
+    
+    // Add problem details
+    builder.Services.AddProblemDetails();
+    
+    var app = builder.Build();
+    
+    // Configure middleware pipeline
+    
+    // Exception handling (must be first)
+    app.UseExceptionHandler();
+    app.UseMiddleware<ExceptionHandlingMiddleware>();
+    
+    // Security headers
+    app.Use(async (context, next) =>
+    {
+        context.Response.Headers.Append("X-Content-Type-Options", "nosniff");
+        context.Response.Headers.Append("X-Frame-Options", "DENY");
+        context.Response.Headers.Append("X-XSS-Protection", "1; mode=block");
+        context.Response.Headers.Append("Referrer-Policy", "strict-origin-when-cross-origin");
+        context.Response.Headers.Append("Permissions-Policy", "geolocation=(), microphone=(), camera=()");
+        
+        if (!app.Environment.IsDevelopment())
+        {
+            context.Response.Headers.Append("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+        }
+        
+        await next();
+    });
+    
+    // Swagger (development only or can be configured)
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI(options =>
+        {
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "SENTINEL AI API v1");
+            options.RoutePrefix = "swagger";
+            options.DocumentTitle = "SENTINEL AI API Documentation";
+            options.DefaultModelsExpandDepth(-1);
+        });
+    }
+    
+    // HTTPS redirection
+    app.UseHttpsRedirection();
+    
+    // Response compression
+    app.UseResponseCompression();
+    
+    // CORS
+    app.UseCors("Default");
+    
+    // Request logging
+    app.UseSerilogRequestLogging(options =>
+    {
+        options.MessageTemplate = "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms";
+        options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
+        {
+            diagnosticContext.Set("RequestHost", httpContext.Request.Host.Value);
+            diagnosticContext.Set("UserAgent", httpContext.Request.Headers.UserAgent.ToString());
+            diagnosticContext.Set("ClientIP", httpContext.Connection.RemoteIpAddress?.ToString());
+            
+            var tenantId = httpContext.User.FindFirst(ClaimTypes.TenantId)?.Value;
+            if (!string.IsNullOrEmpty(tenantId))
+            {
+                diagnosticContext.Set("TenantId", tenantId);
+            }
+        };
+    });
+    
+    // Rate limiting
+    app.UseRateLimiter();
+    
+    // Response caching
+    app.UseResponseCaching();
+    
+    // Authentication & Authorization
+    app.UseAuthentication();
+    app.UseAuthorization();
+    
+    // Health checks
+    app.MapHealthChecks("/health", new HealthCheckOptions
+    {
+        Predicate = _ => true,
+        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    });
+    
+    app.MapHealthChecks("/health/ready", new HealthCheckOptions
+    {
+        Predicate = check => check.Tags.Contains("db"),
+        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    });
+    
+    app.MapHealthChecks("/health/live", new HealthCheckOptions
+    {
+        Predicate = _ => false // Just check if app is running
+    });
+    
+    // Map controllers
+    app.MapControllers();
+    
+    // Root endpoint
+    app.MapGet("/", () => Results.Ok(new
+    {
+        name = "SENTINEL AI API",
+        version = "1.0.0",
+        description = "Modular AI-Powered Fraud Detection Platform",
+        status = "Running",
+        documentation = "/swagger",
+        health = "/health"
+    }));
+    
+    Log.Information("SENTINEL AI API started successfully");
+    
+    // Seed database (development only)
+    if (app.Environment.IsDevelopment())
+    {
+        try
+        {
+            Log.Information("Seeding database...");
+            await SentinelAI.Infrastructure.Data.DatabaseSeeder.SeedAsync(app.Services);
+        }
+        catch (Exception ex)
+        {
+            Log.Warning(ex, "Database seeding failed - this is expected if migrations haven't been run");
+        }
+    }
+    
+    await app.RunAsync();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "SENTINEL AI API terminated unexpectedly");
+    throw;
+}
+finally
+{
+    Log.CloseAndFlush();
+}

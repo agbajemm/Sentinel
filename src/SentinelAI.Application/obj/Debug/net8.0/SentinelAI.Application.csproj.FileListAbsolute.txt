@@ -1,0 +1,15 @@
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\SentinelAI.Application.csproj.AssemblyReference.cache
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\SentinelAI.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\SentinelAI.Application.AssemblyInfoInputs.cache
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\SentinelAI.Application.AssemblyInfo.cs
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\SentinelAI.Application.csproj.CoreCompileInputs.cache
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\bin\Debug\net8.0\SentinelAI.Application.deps.json
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\bin\Debug\net8.0\SentinelAI.Application.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\bin\Debug\net8.0\SentinelAI.Application.pdb
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\bin\Debug\net8.0\SentinelAI.Core.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\bin\Debug\net8.0\SentinelAI.Core.pdb
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\Sentinel.B2589BE6.Up2Date
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\SentinelAI.Application.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\refint\SentinelAI.Application.dll
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\SentinelAI.Application.pdb
+C:\Users\MuhammedAgbaje\Downloads\SentinelAI\src\SentinelAI.Application\obj\Debug\net8.0\ref\SentinelAI.Application.dll

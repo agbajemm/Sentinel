@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "1cw/ihj1mLY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\SentinelAI.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
+    "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.1\\microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\system.text.json\\8.0.5\\system.text.json.8.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

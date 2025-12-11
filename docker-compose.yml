@@ -1,0 +1,130 @@
+# SENTINEL AI - Docker Compose Configuration
+# For local development and testing
+
+version: '3.8'
+
+services:
+  # SENTINEL AI API
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sentinel-ai-api
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=sentinel_ai;Username=sentinel_user;Password=SentinelDev123!;
+      - ConnectionStrings__Redis=redis:6379,abortConnect=false
+      - Jwt__Secret=YourDevelopmentSecretKeyThatIsAtLeast32CharactersLong!
+      - Jwt__Issuer=SentinelAI.Dev
+      - Jwt__Audience=SentinelAI.Dev.Clients
+      - Encryption__MasterKey=DevMasterKeyThatIsAtLeast32CharactersLongForSecurity!
+      - Encryption__Salt=DevSaltValueForDevelopmentEnvironment
+      # Azure AI Foundry - Replace with your actual values
+      - AzureAIFoundry__Endpoint=${AZURE_AI_FOUNDRY_ENDPOINT:-https://placeholder.api.azureml.ms}
+      - AzureAIFoundry__ApiKey=${AZURE_AI_FOUNDRY_API_KEY:-placeholder-key}
+      - AzureAIFoundry__ProjectName=${AZURE_AI_FOUNDRY_PROJECT_NAME:-sentinel-ai-dev}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - sentinel-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: sentinel-postgres
+    environment:
+      - POSTGRES_USER=sentinel_user
+      - POSTGRES_PASSWORD=SentinelDev123!
+      - POSTGRES_DB=sentinel_ai
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    networks:
+      - sentinel-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sentinel_user -d sentinel_ai"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: sentinel-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    networks:
+      - sentinel-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # pgAdmin (optional - for database management)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: sentinel-pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@sentinel-ai.local
+      - PGADMIN_DEFAULT_PASSWORD=admin123
+      - PGADMIN_LISTEN_PORT=5050
+    ports:
+      - "5050:5050"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - sentinel-network
+    depends_on:
+      - postgres
+    profiles:
+      - tools
+    restart: unless-stopped
+
+  # Redis Commander (optional - for cache monitoring)
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: sentinel-redis-commander
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+    networks:
+      - sentinel-network
+    depends_on:
+      - redis
+    profiles:
+      - tools
+    restart: unless-stopped
+
+networks:
+  sentinel-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  pgadmin_data:
+    driver: local

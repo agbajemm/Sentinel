@@ -1,0 +1,632 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\tests\\SentinelAI.Tests\\SentinelAI.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Agents\\SentinelAI.Agents.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Agents\\SentinelAI.Agents.csproj",
+        "projectName": "SentinelAI.Agents",
+        "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Agents\\SentinelAI.Agents.csproj",
+        "packagesPath": "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Agents\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MuhammedAgbaje\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\SentinelAI.Application.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\SentinelAI.Application.csproj"
+              },
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj"
+              },
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Infrastructure\\SentinelAI.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Infrastructure\\SentinelAI.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Azure.AI.OpenAI": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "Azure.AI.Projects": {
+              "target": "Package",
+              "version": "[1.0.0-beta.2, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.SemanticKernel": {
+              "target": "Package",
+              "version": "[1.21.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Api\\SentinelAI.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Api\\SentinelAI.Api.csproj",
+        "projectName": "SentinelAI.Api",
+        "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Api\\SentinelAI.Api.csproj",
+        "packagesPath": "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MuhammedAgbaje\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Agents\\SentinelAI.Agents.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Agents\\SentinelAI.Agents.csproj"
+              },
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\SentinelAI.Application.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\SentinelAI.Application.csproj"
+              },
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj"
+              },
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Infrastructure\\SentinelAI.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Infrastructure\\SentinelAI.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AspNetCore.HealthChecks.NpgSql": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "AspNetCore.HealthChecks.Redis": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "AspNetCore.HealthChecks.UI.Client": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "AspNetCoreRateLimit": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "OpenTelemetry.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[1.9.0, )"
+            },
+            "OpenTelemetry.Instrumentation.AspNetCore": {
+              "target": "Package",
+              "version": "[1.9.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.7.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\SentinelAI.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\SentinelAI.Application.csproj",
+        "projectName": "SentinelAI.Application",
+        "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\SentinelAI.Application.csproj",
+        "packagesPath": "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MuhammedAgbaje\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.9.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj",
+        "projectName": "SentinelAI.Core",
+        "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj",
+        "packagesPath": "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MuhammedAgbaje\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Infrastructure\\SentinelAI.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Infrastructure\\SentinelAI.Infrastructure.csproj",
+        "projectName": "SentinelAI.Infrastructure",
+        "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Infrastructure\\SentinelAI.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MuhammedAgbaje\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\SentinelAI.Application.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\SentinelAI.Application.csproj"
+              },
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.12.0, )"
+            },
+            "Azure.Messaging.ServiceBus": {
+              "target": "Package",
+              "version": "[7.18.1, )"
+            },
+            "Azure.Security.KeyVault.Secrets": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[8.4.1, )"
+            },
+            "Polly.Extensions.Http": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\tests\\SentinelAI.Tests\\SentinelAI.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\tests\\SentinelAI.Tests\\SentinelAI.Tests.csproj",
+        "projectName": "SentinelAI.Tests",
+        "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\tests\\SentinelAI.Tests\\SentinelAI.Tests.csproj",
+        "packagesPath": "C:\\Users\\MuhammedAgbaje\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\tests\\SentinelAI.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MuhammedAgbaje\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Agents\\SentinelAI.Agents.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Agents\\SentinelAI.Agents.csproj"
+              },
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Api\\SentinelAI.Api.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Api\\SentinelAI.Api.csproj"
+              },
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\SentinelAI.Application.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Application\\SentinelAI.Application.csproj"
+              },
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Core\\SentinelAI.Core.csproj"
+              },
+              "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Infrastructure\\SentinelAI.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\MuhammedAgbaje\\Downloads\\SentinelAI\\src\\SentinelAI.Infrastructure\\SentinelAI.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.6.0, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.12.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.10.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
